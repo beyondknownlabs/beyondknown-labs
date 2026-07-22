@@ -1111,3 +1111,25 @@ body.nav-open {
     backdrop-filter: none;
   }
 }
+
+/* Step 9 — Tablet and reel-loading refinement */
+@media (min-width: 720px) and (max-width: 919px) {
+  .brand-logo {
+    width: 11.4rem;
+  }
+
+  .reel-grid {
+    gap: 1.15rem;
+  }
+
+  .reel-meta h3 {
+    font-size: clamp(1.1rem, 2.35vw, 1.4rem);
+    line-height: 1.02;
+  }
+}
+
+@media (min-width: 920px) {
+  .reel-grid {
+    gap: 1.2rem;
+  }
+}

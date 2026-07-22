@@ -84,3 +84,11 @@ The live page uses optimized WebP imagery. Supporting PNG/JPG master files are n
 - Refined footer spacing and iPhone safe-area handling
 - Rechecked reduced-motion behavior
 - Completed final path, ID, heading, and asset-reference validation
+
+
+## Refinement Step 9 — Tablet and Reels
+- Removed lazy loading from all six reel covers
+- Reduced the chance of blank reel cards during fast scrolling and full-page screenshots
+- Slightly increased header-logo size at tablet widths
+- Refined spacing in the three-column reel grid
+- Preserved the approved structure, imagery, and desktop navigation behavior
