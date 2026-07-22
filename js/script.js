@@ -18,6 +18,7 @@
     toggle.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
     nav.classList.toggle("is-open", open);
     header.classList.toggle("is-open", open);
+    document.body.classList.toggle("nav-open", open);
   };
 
   if (toggle && nav) {
@@ -31,11 +32,26 @@
     });
 
     document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") {
+      if (event.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") {
         setMenuState(false);
         toggle.focus();
       }
     });
+
+    document.addEventListener("click", (event) => {
+      const isOpen = toggle.getAttribute("aria-expanded") === "true";
+      const clickedInsideHeader = header && header.contains(event.target);
+
+      if (isOpen && !clickedInsideHeader) {
+        setMenuState(false);
+      }
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth >= 920) {
+        setMenuState(false);
+      }
+    }, { passive: true });
   }
 
   const updateHeader = () => {
